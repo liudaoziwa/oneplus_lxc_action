@@ -77,7 +77,7 @@ jobs:
       - name: Fallback to Build Kernel
         run: |
           cd kernel_workspace
-          ./kernel_platform/oplus/build/oplus_build_kernel.sh sun perf
+          tools/bazel build --disk_cache=/home/runner/.cache/bazel --config=fast --lto=thin //common:kernel_aarch64_dist || exit 1
 
       - name: Make AnyKernel3
         run: |
