@@ -59,7 +59,7 @@ jobs:
           # 新添加的步骤：应用外部 LXC commit 补丁
       - name: Apply External LXC Commit Patch
         run: |
-          du -sh kernel_platform
+          du -sh kernel_workspace
           exit 1
           cd kernel_workspace/common  # 进入 common 内核源码目录（如果 commit 针对其他子目录如 msm-kernel，请调整）
           
