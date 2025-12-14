@@ -1,4 +1,4 @@
-name: Build OnePlus_Lxc
+name: Build 6.1
 on:
   workflow_dispatch:
 
