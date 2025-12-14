@@ -59,13 +59,13 @@ jobs:
           # 新添加的步骤：应用外部 LXC commit 补丁
       - name: Apply External LXC Commit Patch
         run: |
-          cd kernel_workspace/kernel_platform/common  # 进入 common 内核源码目录（如果 commit 针对其他子目录如 msm-kernel，请调整）
+          cd kernel_workspace/common  # 进入 common 内核源码目录（如果 commit 针对其他子目录如 msm-kernel，请调整）
           
 
       # 配置信息，带*为附加项目，具有一定危险性和不确定性
       - name: Add Configuration Settings
         run: |
-          cd kernel_workspace/kernel_platform/common
+          cd kernel_workspace/common
           # 移除构建审查
           sed -i 's/check_defconfig//' ./build.config.gki
 
