@@ -60,7 +60,6 @@ jobs:
       - name: Apply External LXC Commit Patch
         run: |
           du -sh kernel_workspace
-          exit 1
           cd kernel_workspace/common  # 进入 common 内核源码目录（如果 commit 针对其他子目录如 msm-kernel，请调整）
           
 
@@ -79,7 +78,7 @@ jobs:
       - name: Fallback to Build Kernel
         run: |
           cd kernel_workspace
-          tools/bazel build --disk_cache=/home/runner/.cache/bazel --config=fast --lto=thin //common:kernel_aarch64_dist || exit 1
+          tools/bazel build --config=fast --lto=thin //common:kernel_aarch64_dist || exit 1
 
       - name: Make AnyKernel3
         run: |
