@@ -84,7 +84,7 @@ jobs:
         run: |
           git clone https://github.com/Numbersf/AnyKernel3 --depth=1
           rm -rf ./AnyKernel3/.git
-          image_path=$(find "./kernel_workspace/kernel_platform/common/out/" -name "Image" | head -n 1)
+          image_path=$(find "./kernel_workspace/out/" -name "Image" | head -n 1)
           if [ -n "$image_path" ]; then
             echo "使用 make 编译的统一路径，成功找到 Image 文件"
           else
